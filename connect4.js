@@ -16,8 +16,8 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
  */
 function makeBoard() {
   //set "board" to empty HEIGHT x WIDTH matrix array
-  for(let y = 0; y < HEIGHT; y++){
-    board.push(WIDTH)
+  for(let y = 0; y < HEIGHT; y++) {
+    board.push(Array(WIDTH).fill(undefined));
   }
 }
 
@@ -60,7 +60,12 @@ function findSpotForCol(x) {
 /** placeInTable: update DOM to place piece into HTML table of board */
 
 function placeInTable(y, x) {
-  // TODO: make a div and insert into correct table cell
+  // make a div and insert into correct table cell
+  const div = document.createElement('div');
+  div.classList.add('piece');
+  div.classList.add(`player${currPlayer}`);
+  const spot = document.getElementById(`${y}-${x}`);
+  spot.append(div);
 }
 
 /** endGame: announce game end */
@@ -92,9 +97,9 @@ function handleClick(evt) {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
-  if(tieGame) {
-    return endGame(`Tie game!`);
-  }
+  // if(tieGame) {
+  //   return endGame(`Tie game!`);
+  // }
   // switch players
   // switch currPlayer 1 <-> 2
   if(currPlayer === 1){
