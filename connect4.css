@@ -31,6 +31,7 @@ h3  {
 
 button{
   font-size: 1.25rem;
+  background-color:rgba(255, 255, 255, 0.74)
 }
 /* pieces are div within game table cells: draw as colored circles */
 
