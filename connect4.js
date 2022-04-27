@@ -146,13 +146,15 @@ function checkForWin() {
     );
   }
 
-  // TODO: read and understand this code. Add comments to help you.
-
   for (let y = 0; y < HEIGHT; y++) {
     for (let x = 0; x < WIDTH; x++) {
+      // checks for win along x axis
       const horiz = [[y, x], [y, x + 1], [y, x + 2], [y, x + 3]];
+      // checks for win along y axis
       const vert = [[y, x], [y + 1, x], [y + 2, x], [y + 3, x]];
+      // checks for win up and to the right
       const diagDR = [[y, x], [y + 1, x + 1], [y + 2, x + 2], [y + 3, x + 3]];
+      // checks for win up and to the left
       const diagDL = [[y, x], [y + 1, x - 1], [y + 2, x - 2], [y + 3, x - 3]];
 
       if (_win(horiz) || _win(vert) || _win(diagDR) || _win(diagDL)) {

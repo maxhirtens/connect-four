@@ -4,7 +4,7 @@
 
 body{
   background-color:rgba(4, 105, 144, 0.724);
-  margin-left: 35vw;
+  margin-left: 5vw;
 }
 
 /* game board table */
@@ -15,6 +15,7 @@ body{
 #board td {
   width: 60px;
   height: 60px;
+  /* min-width: 60px; */
   border: solid 2px #666;
 }
 
@@ -33,20 +34,33 @@ button{
 }
 /* pieces are div within game table cells: draw as colored circles */
 
+@keyframes fall {
+  from {
+    margin-top: -600%;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
 .piece {
   border-radius: 50%;
   margin: 5px;
   width: 80%;
   height: 80%;
+  animation-duration: 1s;
+  animation-name: fall;
+  /* position: absolute; */
 }
 
 /* make pieces different colors, depending on player 1/2 piece */
 .piece.player1  {
-  background-color: rgb(213, 181, 0);
+  background-color: rgb(214, 182, 3);
 }
 
 .piece.player2  {
-  background-color: rgb(173, 173, 173);
+  background-color: rgb(226, 226, 226);
 }
 /* column-top is table row of clickable areas for each column */
 #column-top td {
