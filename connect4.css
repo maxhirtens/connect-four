@@ -1,10 +1,36 @@
-/* game board table */
-#board td {
-  width: 50px;
-  height: 50px;
-  border: solid 1px #666;
+* {
+  font-family: Ubuntu;
 }
 
+body{
+  background-color:rgba(4, 105, 144, 0.724);
+  margin-left: 35vw;
+}
+
+/* game board table */
+#board  {
+  position: relative;
+}
+
+#board td {
+  width: 60px;
+  height: 60px;
+  border: solid 2px #666;
+}
+
+h1  {
+  font-size: 4rem;
+  color:rgba(255, 255, 255, 0.74)
+}
+
+h3  {
+  font-size: 2rem;
+  color:rgba(255, 255, 255, 0.74)
+}
+
+button{
+  font-size: 1.25rem;
+}
 /* pieces are div within game table cells: draw as colored circles */
 
 .piece {
@@ -14,20 +40,20 @@
   height: 80%;
 }
 
-/* make pieces red/blue, depending on player 1/2 piece */
+/* make pieces different colors, depending on player 1/2 piece */
 .piece.player1  {
-  background-color: red;
+  background-color: rgb(213, 181, 0);
 }
 
 .piece.player2  {
-  background-color: blue;
+  background-color: rgb(173, 173, 173);
 }
 /* column-top is table row of clickable areas for each column */
 #column-top td {
-  border: dashed 2px lightgray;
+  border: dashed 2px rgb(125, 125, 125);
 }
 
 /* like to have hover color be currPlayer color */
 #column-top td:hover {
-  background-color: rgb(102, 3, 151);
+  background-color: rgba(158, 158, 158, 0.97);
 }
